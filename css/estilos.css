@@ -1,0 +1,146 @@
+body{
+    background-color: rgb(40, 114, 89);
+    font-family: fantasy;
+    text-align: center;
+    padding-top: 8%;
+    font-size: 20px;
+}
+
+@media (max-width: 600px){
+
+    body{
+        background-color: rgb(178, 255, 115);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 35px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .tarjeta{
+        max-width: 500px;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tarjeta-imagen{
+        width: 40%;
+        height: auto;
+        object-fit: cover;
+    }   
+
+    .tarjeta-contenido {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    color: #EDEDED;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #27a9d1;
+    border-radius: 6px;
+}
+
+nav ul a:hover{
+    background-color: #2841af;
+}
+
+.tarjeta{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 10px ridge #fffb00;
+    border-radius: 8px;
+    background-color: rgb(185, 185, 185);
+    padding: 20px;
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+.tarjeta-imagen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cuadrado{
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    background-color: rgb(53, 187, 0);
+    margin-left: 120px;
+    margin: 30px auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tarjeta:hover .cuadrado{
+    transform: scale(1.3) rotate(45deg);
+}
+
+.tarjeta:active .cuadrado{
+    transform: scale(0.5) skewX(30deg) rotate(-99deg);
+}
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+        transform: translateY(35px)
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sacudir {
+    from{
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes latido {
+    0%{
+        transform: scale(1);
+    }
+    5%{
+        transform: scale(1.03);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.texto-animado{
+    text-align: center;
+    animation: aparecer 1.2s ease-in-out 0.5s infinite alternate;
+}
+
+.carita{
+    text-align: center;
+    animation: sacudir 0.2s ease-in-out 0.5s infinite alternate;
+}
+
+.tarjeta img{
+    animation: latido 1.8s ease-in-out infinite;
+}
